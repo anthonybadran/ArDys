@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>حل عسر القراءة</title>
+        <link rel="stylesheet" href="/static/css/@fortawesome/fontawesome-free/css/all.min.css" />
+        <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="/static/css/styles.css" />
+        <script src="/static/js/jquery.slim.min.js"></script>
+        <script src="/static/js/popper.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="https://static.tumblr.com/maopbtg/oimmiw86r/jquery.autosize-min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+        <script src="/static/js/scripts.js"></script>
+        <script src="/static/js/upload-script.js"></script>
+    </head>
+
+    {% block javascript%}
+    <body>
+        <nav id="here" class="navbar navbar-expand-lg fixed-top py-3">
+            <button
+                id="menuButton"
+                class="navbar-toggler navbar-toggler-left"
+                type="button"
+                data-toggle="collapse"
+                data-target=".navbar-collapse.left"
+            >
+                ☰
+            </button>
+            <div class="navbar-collapse left collapse">
+                <ul class="nav navbar-nav justify-content-start">
+                    <li class="nav-item">
+                        <a class="nav-link" dir="rtl" data-toggle="modal" data-target="#videoModal" href="#"
+                            >ما هو عسر القراءة؟
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a id="navBrand" class="navbar-brand mx-auto abs-center-x" href="#"
+                ><img id="logoImg" src="/static/img/white-trans.png" alt="arDys"
+            /></a>
+            <div class="navbar-collapse left collapse">
+                <ul class="nav navbar-nav w-100 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" dir="rtl" href="#" data-toggle="modal" data-target="#aboutModal"
+                            >نبذة عن <span> ArDys</span></a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <button id="trans" class="navbar-toggler navbar-toggler-left" type="button">☰</button>
+        </nav>
+        <div id="clearModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">هل أنت متأكد من الحذف؟</h4>
+                    </div>
+                    <div class="modal-body">
+                        <button id="close-modal" type="button" class="btn btn-primary" data-dismiss="modal">لا</button>
+                        <button id="clear-modal" type="button" class="btn btn-primary">نعم</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="videoModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe
+                                id="dyslexiaVideo"
+                                src="https://www.youtube.com/embed/r128A7Qpr8s"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="modal fade"
+            id="aboutModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="aboutModal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div dir="rtl" class="modal-header">
+                        <h4 class="modal-title" id="aboutTitle">نبذة عن <span> ArDys</span></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div dir="rtl" class="modal-body">
+                        <h5>ما هو<span> ArDys</span>؟</h5>
+                        <p>
+                            ArDys هو أداة بسيطة للغاية مصممة لجعل القراءة في متناول الجميع. هدفنا الرئيسي هو مساعدة
+                            المتعلمين من خلال وضعهم في بيئة للقراءة خاصة مصممة بشكل مثالي للحصول على أفضل تجربة قراءة
+                            بسيطة. تم تصميم ArDys حول نهج <span> mobile-first</span> أولاً مما يجعله سريع الاستجابة عند
+                            استخدام الأجهزة المحمولة من مجموعة متنوعة من الأحجام ، مما يجعلها متاحة للجميع أينما كان
+                            المستخدم وأيا كان جهاز يستخدمه المتعلم أو المعلم.
+                        </p>
+                        <h5>الأشخاص ذوو العقول السحرية</h5>
+                        <p>
+                            جمهور ArDys الرئيسي هم الأشخاص المصابون بعُسر القراءة. يعاني الأشخاص المصابون بعُسر القراءة
+                            من صعوبة في القراءة بوتيرة جيدة وبدون أخطاء. قد يواجهون أيضًا صعوبة في فهم القراءة والتهجئة
+                            والكتابة. ولكن مع ArDys ، لا تتطلب القراءة سوى القليل من الجهد!
+                        </p>
+                        <div dir="ltr" class="card card-body bg-light col-12 mb-5 mt-5">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">
+                                    Dyslexia is not a pigeonhole to say you can’t do anything. It is an opportunity and
+                                    a possibility to learn differently. You have magical brains, they just process
+                                    differently. Don’t feel like you should be held back by it.
+                                </p>
+                                <footer class="blockquote-footer">
+                                    Princess Beatrice,
+                                    <cite title="Source Title"> Bolingbroke Academy, 2014</cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <p>
+                            <em>لمعرفة المزيد عن عسر القراءة ، تحقق من الرابط الموجود في الصفحة الرئيسية.</em>
+                        </p>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <span class="w-100 text-muted">© Copyright 2020 arDys</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container input-here">
+            <div class="row row-content align-items-center">
+                <div id="wrapper" class="col-12">
+                    <div class="row">
+                        <!-- <textarea
+                            class="col-12"
+                            id="text-uploads"
+                            name="text"
+                            rows="4"
+                            style="overflow: hidden; word-wrap: break-word; resize: none; height: 350px"
+                        >
+                        {{content}}
+                        </textarea> -->
+                        <div
+                            id="text-uploads"
+                            class="textarea col-12 droid-arabic-kufi"
+                            name="text"
+                            contenteditable="true"
+                            dir="rtl"
+                            style="overflow: hidden; word-wrap: break-word; resize: none; height: auto"
+                        >
+                            {{content}}
+                        </div>
+                        <br />
+                    </div>
+                    <div class="row mt-4">
+                        <label for="clear" class="sr-only">Clear</label>
+                        <a href="/">
+                            <button type="button" id="backHome" class="btn btn-primary functButton" value="back">
+                                <i class="fas fa-arrow-left"></i> العودة
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    {% endblock %}
+</html>
