@@ -45,7 +45,10 @@ def divide_words(word1):
                             slashed =(word1[2] + '/'+word1[3] + word1[4] + '/')
                             ind = 4
                     else:
-                        slashed =(word1[2] + '/'+word1[3] +'/')
+                        if word1[4]=="ْ":
+                            slashed =(word1[2] + '/'+word1[3] +word1[4]+'/')
+                        else:
+                            slashed =(word1[2] + '/'+word1[3] +'/')
                         ind = 4
         finished = finished + slashed
         for a in range(len(word1)):
@@ -135,10 +138,10 @@ def divide_words(word1):
                 if word1[len(word1) - 2] != "ِ" and word1[len(word1) - 2] != "َ" and word1[len(word1) - 2] != "ُ" and word1[
                     len(word1) - 2] != "ْ" and word1[len(word1) - 2] != "ً" and word1[len(word1) - 2] != "ّ" and word1[
                     len(word1) - 2] != "ا" and word1[len(word1) - 2] != "و" and word1[len(word1) - 2] != "ي" and word1[
-                    len(word1) - 2] != "ى" and word1[len(word1) - 2] != "ٌ" and word1[len(word1) - 2] != "ٍ":
+                    len(word1) - 2] != "ى" and word1[len(word1) - 2] != "ٌ" and word1[len(word1) - 2] != "ٍ" and word1[len(word1)-2]!="!":
                     finished = finished.strip('/') + word1[len(word1)-2]
-            elif word1[len(word1)-1]=="؟" and word1[len(word1)-2]=="!":
-                if word1[len(word1) - 3] != "ِ" and word1[len(word1) - 3] != "َ" and word1[len(word1) - 3] != "ُ" and word1[len(word1) - 3] != "ْ" and word1[len(word1) - 3] != "ً" and word1[len(word1) - 3] != "ّ" and word1[len(word1) - 3] != "ا" and word1[len(word1) - 3] != "و" and word1[len(word1) - 3] != "ي" and word1[len(word1) - 3] != "ى" and word1[len(word1) - 3] != "ٌ" and word1[len(word1) - 3] != "ٍ":
+                elif word1[len(word1)-1]=="؟" and word1[len(word1)-2]=="!":
+                    if word1[len(word1) - 3] != "ِ" and word1[len(word1) - 3] != "َ" and word1[len(word1) - 3] != "ُ" and word1[len(word1) - 3] != "ْ" and word1[len(word1) - 3] != "ً" and word1[len(word1) - 3] != "ّ" and word1[len(word1) - 3] != "ا" and word1[len(word1) - 3] != "و" and word1[len(word1) - 3] != "ي" and word1[len(word1) - 3] != "ى" and word1[len(word1) - 3] != "ٌ" and word1[len(word1) - 3] != "ٍ":
                         finished =finished.strip('/')+word1[len(word1)-3]
             elif(word1[len(word1)-1]=='.'):
                 try:
@@ -167,10 +170,16 @@ def wrongvalue(slashed,word1):
         if t == "،" or t == ":" or t == "." or t == "!" or t == "؟":
             nonpunct +=1
     if len(slashed)-count == len(word1)-nonpunct:
-        return slashed
+        if nonpunct == 0:
+            return slashed
+        else:
+            while nonpunct!=0:
+                slashed = slashed+word1[len(word1)-1]
+                nonpunct-=1
+            return slashed
     else :
         return word1
-        
+
 
 @app.route('/')
 def home():
