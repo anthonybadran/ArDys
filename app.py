@@ -174,7 +174,7 @@ def wrongvalue(slashed,word1):
             return slashed
         else:
             while nonpunct!=0:
-                slashed = slashed+word1[len(word1)-1]
+                slashed = slashed+word1[len(word1)-nonpunct]
                 nonpunct-=1
             return slashed
     else :
