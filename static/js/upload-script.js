@@ -9,25 +9,29 @@ $(document).ready(function () {
             var counter = 0;
             if (size > 0) {
                 word_slash.forEach(function (syll) {
-                    if (counter % 2 == 0) {
-                        if (counter != 0) {
-                            if (counter == word_slash.length - 1) {
-                                word += "<span class='black-syll'>&zwj;" + syll + "</span>";
-                            } else {
-                                word += "<span class='black-syll'>&zwj;" + syll + "&zwj;</span>";
-                            }
-                        } else {
-                            word += "<span class='black-syll'>" + syll + "&zwj;</span>";
-                        }
+                    if (word_slash.length == 1) {
+                        word += "<span class='black-syll'>" + syll + "</span>";
                     } else {
-                        if (counter != 0) {
-                            if (counter == word_slash.length - 1) {
-                                word += "<span class='red-syll'>&zwj;" + syll + "</span>";
+                        if (counter % 2 == 0) {
+                            if (counter != 0) {
+                                if (counter == word_slash.length - 1) {
+                                    word += "<span class='black-syll'>&zwj;" + syll + "</span>";
+                                } else {
+                                    word += "<span class='black-syll'>&zwj;" + syll + "&zwj;</span>";
+                                }
                             } else {
-                                word += "<span class='red-syll'>&zwj;" + syll + "&zwj;</span>";
+                                word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                             }
                         } else {
-                            word += "<span class='black-syll'>" + syll + "&zwj;</span>";
+                            if (counter != 0) {
+                                if (counter == word_slash.length - 1) {
+                                    word += "<span class='red-syll'>&zwj;" + syll + "</span>";
+                                } else {
+                                    word += "<span class='red-syll'>&zwj;" + syll + "&zwj;</span>";
+                                }
+                            } else {
+                                word += "<span class='black-syll'>" + syll + "&zwj;</span>";
+                            }
                         }
                     }
                     counter++;
