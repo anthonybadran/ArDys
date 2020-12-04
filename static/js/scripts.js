@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     $("#import").click(function () {
         $("#paper").replaceWith(
-            '<div id="chooseFile"> <form id="fileForm" method="POST" action="/upload" enctype="multipart/form-data"> <div class="custom-file"> <input type="file" name="doc_file" accept=".doc,.docx" class="custom-file-input" id="customFile"/> <label class="custom-file-label" for="customFile">Choose file</label> </div><div> <button id="btnResetForm" class="btn btn-primary">Clear</button> <button id="submitDoc" class="btn btn-primary">Submit</button> </div></form> </div>'
+            '<div id="chooseFile"> <form id="fileForm" method="POST" action="/upload" enctype="multipart/form-data"> <div class="custom-file"> <input type="file" name="doc_file" accept=".doc,.docx" class="custom-file-input" id="customFile"/> <label class="custom-file-label" for="customFile">Choose file</label> </div><div> <button id="btnResetForm" class="btn btn-primary"><i class="fas fa-eraser"></i></button> <button id="submitDoc" class="btn btn-primary"><i class="fas fa-check"></i></button> </div></form> </div>'
         );
         bsCustomFileInput.init();
         var btn = document.getElementById("btnResetForm");

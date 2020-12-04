@@ -430,3 +430,7 @@ i {
 .red-syll {
     color: #d83700;
 }
+
+.custom-file-input ~ .custom-file-label::after {
+    content: "تصفح";
+}
