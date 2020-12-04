@@ -14,38 +14,38 @@ def divide_words(word1):
         slashed=""
         if word1[0] =="ا":
             if word1[3] =="ّ":
-                slashed = (word1[0]+word1[1]+"p")
+                slashed = (word1[0]+word1[1]+"/")
             else:
                 if word1[2]=="أ" or word1[2]=="إ":
                     if word1[5]=="ْ":
-                        slashed =(word1[0]+'p'+word1[1]+'/'+word1[2]+word1[3]+word1[4]+word1[5]+'/')
+                        slashed =(word1[0]+'/'+word1[1]+'/'+word1[2]+word1[3]+word1[4]+word1[5]+'/')
                         ind = 5
                     else:
-                        slashed =(word1[0] + 'p'+word1[1] + word1[2] + '/')
+                        slashed =(word1[0] + '/'+word1[1] + word1[2] + '/')
                         ind = 3
                 else:
                     ind =2
-                    slashed = (word1[0]+'p'+word1[1]+'/')
+                    slashed = (word1[0]+'/'+word1[1]+'/')
         if word1[0:2] =="بِ" or word1[0:2]=="كَ" or word1[0:2]== "وَ" or word1[0:2]=="فَ":
             if word1[2] == "ا":
                 slashed =(word1[0:2]+'/')
                 finished = finished +slashed
                 if word1[5] == "ّ" or word1[6]=="ّ":
-                    slashed =(word1[2] + word1[3] + "p")
+                    slashed =(word1[2] + word1[3] + "/")
                     ind = 2
                 elif word1[4]=="ّ":
-                    slashed = word1[2]+'p'
+                    slashed = word1[2]+'/'
                     ind = 2
                 else:
                     if word1[4] == "أ" or word1[4] == "إ":
                         if word1[7] == "ْ":
-                            slashed =(word1[2] + 'p'+word1[3] +'/'+word1[4] + word1[5] + word1[6] + word1[7] + '/')
+                            slashed =(word1[2] + '/'+word1[3] +'/'+word1[4] + word1[5] + word1[6] + word1[7] + '/')
                             ind = 7
                         else:
-                            slashed =(word1[2] + 'p'+word1[3] + word1[4] + '/')
+                            slashed =(word1[2] + '/'+word1[3] + word1[4] + '/')
                             ind = 4
                     else:
-                        slashed =(word1[2] + 'p'+word1[3] +'/')
+                        slashed =(word1[2] + '/'+word1[3] +'/')
                         ind = 4
         finished = finished + slashed
         for a in range(len(word1)):
@@ -57,7 +57,7 @@ def divide_words(word1):
                     except: pass
                     if word1[a] !="ِ" and word1[a] !="َ" and word1[a] != "ُ" and word1[a] != "ْ" and word1[a] !="ً" and word1[a]!="ّ":
                         if word1[a] == "و" and word1[a-1] != "ِ" and word1[a-1] != "َ" and word1[a-1] != "ُ" and word1[a-1] != "ْ" and word1[a+1] =="ا":
-                            slashed = word1[a+1]+'p'
+                            slashed = word1[a+1]+'/'
                             finished = finished + slashed
                             return finished.strip("/")
                         try:
@@ -153,7 +153,7 @@ def divide_words(word1):
                         finished = finished.strip('/') +word1[len(word1)-q]
                 except:pass
         if word1[len(word1) - 1] == "ى":
-            finished = finished +'p'
+            finished = finished +'/'
         return finished.strip("/")
     except:
         return word1
