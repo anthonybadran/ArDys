@@ -170,7 +170,7 @@ def wrongvalue(slashed,word1):
         return slashed
     else :
         return word1
-
+        
 
 @app.route('/')
 def home():
