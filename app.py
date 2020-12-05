@@ -54,6 +54,32 @@ def divide_words(word1):
         for a in range(len(word1)):
             if ind > a: continue
             if a+1 < (len(word1)):
+                try:
+                    if (word1[a + 2] == "ا" or word1[a + 2] == "و" or word1[a + 2] == "ي" or word1[a + 2] == "ى") and (
+                            word1[a + 1] == "َ" or word1[a + 1] == "ِ" or word1[a + 1] == "ُ") and (
+                            word1[a + 3] != "َ" and word1[a + 3] != "ِ" and word1[a + 3] != "ُ" and word1[
+                        a + 3] != "ّ" and word1[a + 3] != "ْ" and word1[a + 3] != "ا") and word1[a] != "ّ":
+                        slashed = word1[a] + word1[a + 1] + word1[a + 2] + '/'
+                        finished = finished + slashed
+                        ind = a + 3
+                        continue
+                    elif word1[a + 1] == "ّ" and (
+                            word1[a + 2] == "َ" or word1[a + 2] == "ِ" or word1[a + 2] == "ُ") and (
+                            word1[a + 3] == "ا" or word1[a + 3] == "و" or word1[a + 3] == "ي" or word1[
+                        a + 3] == "ى") and word1[a] != "ّ":
+                        try:
+                            if word1[a + 4] != "َ" and word1[a + 4] != "ِ" and word1[a + 4] != "ُ" and word1[
+                                a + 4] != "ّ" and word1[a + 4] != "ْ" and word1[a + 4] != "ا":
+                                slashed = word1[a] + word1[a + 1] + word1[a + 2] + word1[a + 3] + '/'
+                                finished = finished + slashed
+                                ind = a + 4
+                                continue
+                        except:
+                            slashed = word1[a] + word1[a + 1] + word1[a + 2] + word1[a + 3] + '/'
+                            finished = finished + slashed
+                            ind = a + 4
+                            continue
+                except:pass
                 if word1[a + 1] == "ا" or word1[a + 1] == "و" or word1[a + 1] =="ي" or word1[a+1]=="ى":#aswat tawila
                     try:
                         if word1[a]=="ا" and (word1[a+1]=="و"or word1[a+1]=="ي") and (word1[a + 2] == "ِ" or word1[a + 2] == "َ" or word1[a + 2] == "ُ" or word1[a+2] == "ّ"):continue
