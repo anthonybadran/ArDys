@@ -17,7 +17,23 @@ $(document).ready(function () {
             var word7 = "";
             if (size > 0) {
                 word_slash.forEach(function (syll) {
-                    if (word_slash.length == 1) {
+                    if(counter == 0){
+                        gris2 = syll.split('`');
+                        if (gris2.length > 1){
+                            if(word_slash.length == 1){
+                                word7 = "<span class='grey-syll'>" + gris2[0] + "&zwj;</span>" + "<span class='black-syll'>" + gris2[1] + "</span>";
+                            }else{
+                                word7 = "<span class='grey-syll'>" + gris2[0] + "&zwj;</span>" + "<span class='black-syll'>" + gris2[1] + "&zwj;</span>";
+                            }
+                        }else{
+                            if(word_slash.length == 1){
+                                word7 = "<span class='black-syll'>" + gris2[0] + "</span>";
+                            }else{
+                                word7 = "<span class='black-syll'>" + gris2[0] + "&zwj;</span>";
+                            }
+                        }
+                        word+= word7;
+                    } else if (word_slash.length == 1) {
                         word += "<span class='black-syll'>" + syll + "</span>";
                     } else if (
                         prev2 == "دً" ||
@@ -85,7 +101,6 @@ $(document).ready(function () {
                                     word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                                 }
                             } else {
-
                                 word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                             }
                         } else {
@@ -138,7 +153,6 @@ $(document).ready(function () {
                                     word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                                 }
                             } else {
-
                                 word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                             }
                         } else {
@@ -149,7 +163,6 @@ $(document).ready(function () {
                                     word += "<span class='red-syll'>" + syll + "&zwj;</span>";
                                 }
                             } else {
-
                                 word += "<span class='red-syll'>" + syll + "&zwj;</span>";
                             }
                         }
@@ -162,7 +175,6 @@ $(document).ready(function () {
                                     word += "<span class='black-syll'>&zwj;" + syll + "&zwj;</span>";
                                 }
                             } else {
-
                                 word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                             }
                         } else {
@@ -173,7 +185,6 @@ $(document).ready(function () {
                                     word += "<span class='red-syll'>&zwj;" + syll + "&zwj;</span>";
                                 }
                             } else {
-
                                 word += "<span class='red-syll'>" + syll + "&zwj;</span>";
                             }
                         }
