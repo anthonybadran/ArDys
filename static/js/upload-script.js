@@ -9,6 +9,12 @@ $(document).ready(function () {
             var counter = 0;
             var prev2 = "";
             var prev = "";
+            var gris = "";
+            var gris1 = "";
+            var gris2 = "";
+            var word5 = "";
+            var word6 = "";
+            var word7 = "";
             if (size > 0) {
                 word_slash.forEach(function (syll) {
                     if (word_slash.length == 1) {
@@ -79,6 +85,7 @@ $(document).ready(function () {
                                     word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                                 }
                             } else {
+
                                 word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                             }
                         } else {
@@ -131,6 +138,7 @@ $(document).ready(function () {
                                     word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                                 }
                             } else {
+
                                 word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                             }
                         } else {
@@ -141,6 +149,7 @@ $(document).ready(function () {
                                     word += "<span class='red-syll'>" + syll + "&zwj;</span>";
                                 }
                             } else {
+
                                 word += "<span class='red-syll'>" + syll + "&zwj;</span>";
                             }
                         }
@@ -153,6 +162,7 @@ $(document).ready(function () {
                                     word += "<span class='black-syll'>&zwj;" + syll + "&zwj;</span>";
                                 }
                             } else {
+
                                 word += "<span class='black-syll'>" + syll + "&zwj;</span>";
                             }
                         } else {
@@ -163,6 +173,7 @@ $(document).ready(function () {
                                     word += "<span class='red-syll'>&zwj;" + syll + "&zwj;</span>";
                                 }
                             } else {
+
                                 word += "<span class='red-syll'>" + syll + "&zwj;</span>";
                             }
                         }
@@ -171,7 +182,19 @@ $(document).ready(function () {
                     prev2 = syll.slice(-2);
                     prev = syll.slice(-1);
                 });
-                text += word;
+                gris = word.split('^');
+                if (gris.length > 1){
+                    word5 = gris[0] + "<span class='grey-syll'>&zwj;" + gris[1] + "</span>";
+                } else {
+                    word5 = gris[0];
+                }
+                gris1 = word5.split('|');
+                if (gris1.length > 1){
+                    word6 = gris1[0] + "<span class='grey-syll'>" + gris1[1] + "&zwj;</span>" + gris1[2];
+                } else {
+                    word6 = gris1[0];
+                }
+                text += word6;
             }
         });
         text = text.trim();

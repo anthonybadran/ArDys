@@ -431,6 +431,10 @@ i {
     color: #d83700;
 }
 
+.grey-syll {
+    color: grey;
+}
+
 .custom-file-input ~ .custom-file-label::after {
     content: "تصفح";
 }
