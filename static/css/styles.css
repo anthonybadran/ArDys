@@ -432,7 +432,7 @@ i {
 }
 
 .grey-syll {
-    color: grey;
+    color: rgb(138, 138, 138);
 }
 
 .custom-file-input ~ .custom-file-label::after {

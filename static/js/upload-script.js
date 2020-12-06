@@ -18,22 +18,34 @@ $(document).ready(function () {
             var word7 = "";
             if (size > 0) {
                 word_slash.forEach(function (syll) {
-                    if(counter == 0){
-                        gris2 = syll.split('`');
-                        if (gris2.length > 1){
-                            if(word_slash.length == 1){
-                                word7 = "<span class='grey-syll'>" + gris2[0] + "&zwj;</span>" + "<span class='black-syll'>" + gris2[1] + "</span>";
-                            }else{
-                                word7 = "<span class='grey-syll'>" + gris2[0] + "&zwj;</span>" + "<span class='black-syll'>" + gris2[1] + "&zwj;</span>";
+                    if (counter == 0) {
+                        gris2 = syll.split("`");
+                        if (gris2.length > 1) {
+                            if (word_slash.length == 1) {
+                                word7 =
+                                    "<span class='grey-syll'>" +
+                                    gris2[0] +
+                                    "&zwj;</span>" +
+                                    "<span class='black-syll'>" +
+                                    gris2[1] +
+                                    "</span>";
+                            } else {
+                                word7 =
+                                    "<span class='grey-syll'>" +
+                                    gris2[0] +
+                                    "&zwj;</span>" +
+                                    "<span class='black-syll'>" +
+                                    gris2[1] +
+                                    "&zwj;</span>";
                             }
-                        }else{
-                            if(word_slash.length == 1){
+                        } else {
+                            if (word_slash.length == 1) {
                                 word7 = "<span class='black-syll'>" + gris2[0] + "</span>";
-                            }else{
+                            } else {
                                 word7 = "<span class='black-syll'>" + gris2[0] + "&zwj;</span>";
                             }
                         }
-                        word+= word7;
+                        word += word7;
                     } else if (word_slash.length == 1) {
                         word += "<span class='black-syll'>" + syll + "</span>";
                     } else if (
@@ -274,14 +286,14 @@ $(document).ready(function () {
                     prev2 = syll.slice(-2);
                     prev = syll.slice(-1);
                 });
-                gris = word.split('^');
-                if (gris.length > 1){
+                gris = word.split("^");
+                if (gris.length > 1) {
                     word5 = gris[0] + "<span class='grey-syll'>&zwj;" + gris[1] + "</span>";
                 } else {
                     word5 = gris[0];
                 }
-                gris1 = word5.split('|');
-                if (gris1.length > 1){
+                gris1 = word5.split("|");
+                if (gris1.length > 1) {
                     word6 = gris1[0] + "<span class='grey-syll'>" + gris1[1] + "&zwj;</span>" + gris1[2];
                 } else {
                     word6 = gris1[0];
@@ -289,7 +301,7 @@ $(document).ready(function () {
                 text += word6;
             }
         });
-        text = text.trim();
+        // text = text.trim();
         document.getElementById("text-uploads").innerHTML = text;
     }
     var text = document.getElementById("text-uploads").innerHTML;
