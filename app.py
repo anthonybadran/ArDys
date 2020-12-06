@@ -55,11 +55,9 @@ def divide_words(word1):
             if ind > a: continue
             if a+1 < (len(word1)):
                 try:
-                    if (word1[a + 2] == "ا" or word1[a + 2] == "و" or word1[a + 2] == "ي" or word1[a + 2] == "ى") and (
-                            word1[a + 1] == "َ" or word1[a + 1] == "ِ" or word1[a + 1] == "ُ") and word1[a] != "ّ":
+                    if (word1[a + 2] == "ا" or word1[a + 2] == "و" or word1[a + 2] == "ي") and (word1[a + 1] == "َ" or word1[a + 1] == "ِ" or word1[a + 1] == "ُ") and word1[a] != "ّ":
                         try:
-                            if (word1[a + 3] != "َ" and word1[a + 3] != "ِ" and word1[a + 3] != "ُ" and word1[
-                                a + 3] != "ّ" and word1[a + 3] != "ْ" and word1[a + 3] != "ا"):
+                            if (word1[a + 3] != "َ" and word1[a + 3] != "ِ" and word1[a + 3] != "ُ" and word1[a + 3] != "ّ" and word1[a + 3] != "ْ" and word1[a + 3] != "ا"):
                                 slashed = word1[a] + word1[a + 1] + word1[a + 2] + '/'
                                 finished = finished + slashed
                                 ind = a + 3
@@ -69,13 +67,9 @@ def divide_words(word1):
                             finished = finished + slashed
                             ind = a + 3
                             continue
-                    elif word1[a + 1] == "ّ" and (
-                            word1[a + 2] == "َ" or word1[a + 2] == "ِ" or word1[a + 2] == "ُ") and (
-                            word1[a + 3] == "ا" or word1[a + 3] == "و" or word1[a + 3] == "ي" or word1[
-                        a + 3] == "ى") and word1[a] != "ّ":
+                    elif word1[a + 1] == "ّ" and (word1[a + 2] == "َ" or word1[a + 2] == "ِ" or word1[a + 2] == "ُ") and (word1[a + 3] == "ا" or word1[a + 3] == "و" or word1[a + 3] == "ي") and word1[a] != "ّ":
                         try:
-                            if word1[a + 4] != "َ" and word1[a + 4] != "ِ" and word1[a + 4] != "ُ" and word1[
-                                a + 4] != "ّ" and word1[a + 4] != "ْ" and word1[a + 4] != "ا":
+                            if word1[a + 4] != "َ" and word1[a + 4] != "ِ" and word1[a + 4] != "ُ" and word1[a + 4] != "ّ" and word1[a + 4] != "ْ" and word1[a + 4] != "ا":
                                 slashed = word1[a] + word1[a + 1] + word1[a + 2] + word1[a + 3] + '/'
                                 finished = finished + slashed
                                 ind = a + 4
@@ -162,16 +156,11 @@ def divide_words(word1):
                         else:
                             slashed = (word1[a]+word1[a+1]+'/')
                             finished = finished + slashed
-        if word1[len(word1) - 1] != "ِ" and word1[len(word1) - 1] != "َ" and word1[len(word1) - 1] != "ُ" and word1[
-            len(word1) - 1] != "ْ" and word1[len(word1) - 1] != "ً" and word1[len(word1) - 1] != "ّ" and word1[
-            len(word1) - 1] != "ا" and word1[len(word1) - 1] != "و" and word1[len(word1) - 1] != "ي" and word1[len(word1) - 1] != "ى" and word1[len(word1)-1]!="ٌ" and word1[len(word1)-1]!="ٍ":
+        if word1[len(word1) - 1] != "ِ" and word1[len(word1) - 1] != "َ" and word1[len(word1) - 1] != "ُ" and word1[len(word1) - 1] != "ْ" and word1[len(word1) - 1] != "ً" and word1[len(word1) - 1] != "ّ" and word1[len(word1) - 1] != "ا" and word1[len(word1) - 1] != "و" and word1[len(word1) - 1] != "ي" and word1[len(word1) - 1] != "ى" and word1[len(word1)-1]!="ٌ" and word1[len(word1)-1]!="ٍ":
             if word1[len(word1) - 1] != "،" and word1[len(word1) - 1] != ":" and word1[len(word1) - 1] != "!" and word1[len(word1) - 1] != "." and word1[len(word1)-1]!="ا" and word1[len(word1)-1]!="؟":
                 finished = finished.strip("/") + word1[len(word1) - 1]
             elif( word1[len(word1) - 1] == "،" or word1[len(word1) - 1] == ":" or word1[len(word1) - 1] == "!" or word1[len(word1)-1]=="؟" )and word1[len(word1)-2]!="ا":
-                if word1[len(word1) - 2] != "ِ" and word1[len(word1) - 2] != "َ" and word1[len(word1) - 2] != "ُ" and word1[
-                    len(word1) - 2] != "ْ" and word1[len(word1) - 2] != "ً" and word1[len(word1) - 2] != "ّ" and word1[
-                    len(word1) - 2] != "ا" and word1[len(word1) - 2] != "و" and word1[len(word1) - 2] != "ي" and word1[
-                    len(word1) - 2] != "ى" and word1[len(word1) - 2] != "ٌ" and word1[len(word1) - 2] != "ٍ" and word1[len(word1)-2]!="!":
+                if word1[len(word1) - 2] != "ِ" and word1[len(word1) - 2] != "َ" and word1[len(word1) - 2] != "ُ" and word1[len(word1) - 2] != "ْ" and word1[len(word1) - 2] != "ً" and word1[len(word1) - 2] != "ّ" and word1[len(word1) - 2] != "ا" and word1[len(word1) - 2] != "و" and word1[len(word1) - 2] != "ي" and word1[len(word1) - 2] != "ى" and word1[len(word1) - 2] != "ٌ" and word1[len(word1) - 2] != "ٍ" and word1[len(word1)-2]!="!":
                     finished = finished.strip('/') + word1[len(word1)-2]
                 elif word1[len(word1)-1]=="؟" and word1[len(word1)-2]=="!":
                     if word1[len(word1) - 3] != "ِ" and word1[len(word1) - 3] != "َ" and word1[len(word1) - 3] != "ُ" and word1[len(word1) - 3] != "ْ" and word1[len(word1) - 3] != "ً" and word1[len(word1) - 3] != "ّ" and word1[len(word1) - 3] != "ا" and word1[len(word1) - 3] != "و" and word1[len(word1) - 3] != "ي" and word1[len(word1) - 3] != "ى" and word1[len(word1) - 3] != "ٌ" and word1[len(word1) - 3] != "ٍ":
@@ -181,11 +170,7 @@ def divide_words(word1):
                     q = 1
                     while word1[len(word1)-q]==".":
                         q+=1
-                    if word1[len(word1) - q] != "ِ" and word1[len(word1) - q] != "َ" and word1[
-                        len(word1) - q] != "ُ" and word1[
-                        len(word1) - q] != "ْ" and word1[len(word1) - q] != "ً" and word1[len(word1) - q] != "ّ" and word1[len(word1) - q] != "ا" and word1[len(word1) - q] != "و" and word1[
-                        len(word1) - q] != "ي" and word1[
-                        len(word1) - q] != "ى" and word1[len(word1) - q] != "ٌ" and word1[len(word1) - q] != "ٍ":
+                    if word1[len(word1) - q] != "ِ" and word1[len(word1) - q] != "َ" and word1[len(word1) - q] != "ُ" and word1[len(word1) - q] != "ْ" and word1[len(word1) - q] != "ً" and word1[len(word1) - q] != "ّ" and word1[len(word1) - q] != "ا" and word1[len(word1) - q] != "و" and word1[len(word1) - q] != "ي" and word1[len(word1) - q] != "ى" and word1[len(word1) - q] != "ٌ" and word1[len(word1) - q] != "ٍ":
                         finished = finished.strip('/') +word1[len(word1)-q]
                 except:pass
         if word1[len(word1) - 1] == "ى":

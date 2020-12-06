@@ -7,6 +7,7 @@ $(document).ready(function () {
             var size = element.length;
             var word_slash = element.split("/");
             var counter = 0;
+            var prev3 = "";
             var prev2 = "";
             var prev = "";
             var gris = "";
@@ -115,7 +116,7 @@ $(document).ready(function () {
                             }
                         }
                     } else if (
-                        prev == "؟ " ||
+                        prev == "؟" ||
                         prev == "!" ||
                         prev == ")" ||
                         prev == "(" ||
@@ -166,6 +167,85 @@ $(document).ready(function () {
                                 word += "<span class='red-syll'>" + syll + "&zwj;</span>";
                             }
                         }
+                    } else if (
+                        prev3 == "دًّ" ||
+                        prev3 == "دّْ" ||
+                        prev3 == "ذًّ" ||
+                        prev3 == "ذّْ" ||
+                        prev3 == "رّْ" ||
+                        prev3 == "رًّ" ||
+                        prev3 == "زّْ" ||
+                        prev3 == "زًّ" ||
+                        prev3 == "وًّ" ||
+                        prev3 == "وّْ" ||
+                        prev3 == "ؤّْ" ||
+                        prev3 == "ؤًّ" ||
+                        prev3 == "إِّ" ||
+                        prev3 == "إٍّ" ||
+                        prev3 == "ؤِّ" ||
+                        prev3 == "ؤٍّ" ||
+                        prev3 == "ؤٌّ" ||
+                        prev3 == "ؤُّ" ||
+                        prev3 == "ؤَّ" ||
+                        prev3 == "ؤّْ" ||
+                        prev3 == "أّْ" ||
+                        prev3 == "أٌّ" ||
+                        prev3 == "أُّ" ||
+                        prev3 == "أًّ" ||
+                        prev3 == "أَّ" ||
+                        prev3 == "وٍّ" ||
+                        prev3 == "وٌّ" ||
+                        prev3 == "وِّ" ||
+                        prev3 == "وُّ" ||
+                        prev3 == "وَّ" ||
+                        prev3 == "وّْ" ||
+                        prev3 == "زٍّ" ||
+                        prev3 == "زِّ" ||
+                        prev3 == "زٌّ" ||
+                        prev3 == "زَّ" ||
+                        prev3 == "زُّ" ||
+                        prev3 == "زّْ" ||
+                        prev3 == "رٌّ" ||
+                        prev3 == "رٍّ" ||
+                        prev3 == "رَّ" ||
+                        prev3 == "رُّ" ||
+                        prev3 == "رّْ" ||
+                        prev3 == "رِّ" ||
+                        prev3 == "ذٍّ" ||
+                        prev3 == "ذٌّ" ||
+                        prev3 == "دٍّ" ||
+                        prev3 == "دٌّ" ||
+                        prev3 == "دّْ" ||
+                        prev3 == "دِّ" ||
+                        prev3 == "دُّ" ||
+                        prev3 == "دَّ" ||
+                        prev3 == "اًّ" ||
+                        prev3 == "ذِّ" ||
+                        prev3 == "ذُّ" ||
+                        prev3 == "ذَّ" ||
+                        prev3 == "ذّْ"
+                    ) {
+                        if (counter % 2 == 0) {
+                            if (counter != 0) {
+                                if (counter == word_slash.length - 1) {
+                                    word += "<span class='black-syll'>" + syll + "</span>";
+                                } else {
+                                    word += "<span class='black-syll'>" + syll + "&zwj;</span>";
+                                }
+                            } else {
+                                word += "<span class='black-syll'>" + syll + "&zwj;</span>";
+                            }
+                        } else {
+                            if (counter != 0) {
+                                if (counter == word_slash.length - 1) {
+                                    word += "<span class='red-syll'>" + syll + "</span>";
+                                } else {
+                                    word += "<span class='red-syll'>" + syll + "&zwj;</span>";
+                                }
+                            } else {
+                                word += "<span class='red-syll'>" + syll + "&zwj;</span>";
+                            }
+                        }
                     } else {
                         if (counter % 2 == 0) {
                             if (counter != 0) {
@@ -190,6 +270,7 @@ $(document).ready(function () {
                         }
                     }
                     counter++;
+                    prev3 = syll.slice(-3);
                     prev2 = syll.slice(-2);
                     prev = syll.slice(-1);
                 });
