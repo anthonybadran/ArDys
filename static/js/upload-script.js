@@ -22,21 +22,9 @@ $(document).ready(function () {
                         gris2 = syll.split("`");
                         if (gris2.length > 1) {
                             if (word_slash.length == 1) {
-                                word7 =
-                                    "<span class='grey-syll'>" +
-                                    gris2[0] +
-                                    "&zwj;</span>" +
-                                    "<span class='black-syll'>" +
-                                    gris2[1] +
-                                    "</span>";
+                                word7 = "<span class='grey-syll'>" + gris2[0] + "&zwj;</span>" + "<span class='black-syll'>" + gris2[1] + "</span>";
                             } else {
-                                word7 =
-                                    "<span class='grey-syll'>" +
-                                    gris2[0] +
-                                    "&zwj;</span>" +
-                                    "<span class='black-syll'>" +
-                                    gris2[1] +
-                                    "&zwj;</span>";
+                                word7 = "<span class='grey-syll'>" + gris2[0] + "&zwj;</span>" + "<span class='black-syll'>" + gris2[1] + "&zwj;</span>";
                             }
                         } else {
                             if (word_slash.length == 1) {
@@ -104,7 +92,15 @@ $(document).ready(function () {
                         prev2 == "ذِ" ||
                         prev2 == "ذُ" ||
                         prev2 == "ذَ" ||
-                        prev2 == "ذْ"
+                        prev2 == "ذْ" ||
+                        prev2 == "ءَ" || 
+                        prev2 == "ءُ" || 
+                        prev2 == "ءِ" || 
+                        prev2 == "ءً" || 
+                        prev2 == "ءٌ" || 
+                        prev2 == "ءٍ" || 
+                        prev2 == "ءْ" || 
+                        prev2 == "ءّ"
                     ) {
                         if (counter % 2 == 0) {
                             if (counter != 0) {
@@ -156,7 +152,8 @@ $(document).ready(function () {
                         prev == "إ" ||
                         prev == "آ" ||
                         prev == "ؤ" ||
-                        prev == "أ"
+                        prev == "أ" ||
+                        prev == "ء"
                     ) {
                         if (counter % 2 == 0) {
                             if (counter != 0) {
@@ -235,7 +232,15 @@ $(document).ready(function () {
                         prev3 == "ذِّ" ||
                         prev3 == "ذُّ" ||
                         prev3 == "ذَّ" ||
-                        prev3 == "ذّْ"
+                        prev3 == "ذّْ" ||
+                        prev3 == "ءَّ" || 
+                        prev3 == "ءُّ" || 
+                        prev3 == "ءِّ" || 
+                        prev3 == "ءًّ" || 
+                        prev3 == "ءٌّ" || 
+                        prev3 == "ءٍّ" || 
+                        prev3 == "ءّْ" || 
+                        prev3 == "ءّْ"
                     ) {
                         if (counter % 2 == 0) {
                             if (counter != 0) {
