@@ -23,7 +23,28 @@ def divide_words(word1):
             finished = ""
             slashed=""
             if word1[0] =="ا":
-                if word1[3] =="ّ":
+                if word1[1]=="ل" and word1[2]=="ْ":
+                    if word1[4] == "ّ":
+                        slashed = (word1[0] + word1[1] +word1[2]+ "`")
+                    elif word1[5] == "ّ":
+                        slashed = (word1[0] + word1[1] +word1[2]+ "`")
+                        chade = list(word1)
+                        chade[5] = chade[4]
+                        chade[4] = "ّ"
+                        word1 = "".join(chade)
+                    else:
+                        if word1[3] == "أ" or word1[3] == "إ":
+                            if word1[6] == "ْ":
+                                slashed = (word1[0] + '`' + word1[1] + '/' + word1[2] + word1[3] + word1[4] + word1[
+                                    5] + word1[6]+'/')
+                                ind = 6
+                            else:
+                                slashed = (word1[0] + '`' + word1[1] + word1[2] +word1[3]+'/')
+                                ind = 4
+                        else:
+                            ind = 3
+                            slashed = (word1[0] + '`' + word1[1] +word1[2] +'/')
+                elif word1[3] =="ّ":
                     slashed = (word1[0]+word1[1] +"`")
                 elif word1[4] =="ّ":
                     slashed = (word1[0] + word1[1] + "`")
@@ -43,7 +64,31 @@ def divide_words(word1):
                         ind =2
                         slashed = (word1[0]+'`'+word1[1]+'/')
             if word1[0:2] =="بِ" or word1[0:2]=="كَ" or word1[0:2]== "وَ" or word1[0:2]=="فَ":
-                if word1[2] == "ا" and word1[3]=="ل":
+                if word1[2] == "ا" and word1[3]=="ل" and word1[4]=="ْ":
+                    slashed = (word1[0:2] + '/')
+                    finished = finished + slashed
+                    if word1[6] == "ّ" or word1[7] == "ّ":
+                        slashed = ("|" + word1[2] + word1[3] + word1[4]+"|")
+                        ind = 3
+                    elif word1[5] == "ّ":
+                        slashed = "|" + word1[2] + '|'
+                        ind = 2
+                    else:
+                        if word1[5] == "أ" or word1[5] == "إ":
+                            if word1[8] == "ْ":
+                                slashed = ("|" + word1[2] + '|' + word1[3] +word1[4]+ '/' + word1[5] + word1[6] + word1[7] +
+                                           word1[8] + '/')
+                                ind = 8
+                            else:
+                                slashed = ("|" + word1[2] + '|' + word1[3] + word1[4] + word1[5]+'/')
+                                ind = 5
+                        else:
+                            if word1[5] == "ْ":
+                                slashed = ("|" + word1[2] + '|' + word1[3] + word1[4] + word1[5]+'/')
+                            else:
+                                slashed = ("|" + word1[2] + '|' + word1[3] +word1[4]+ '/')
+                            ind = 5
+                elif word1[2] == "ا" and word1[3]=="ل":
                     slashed =(word1[0:2]+'/')
                     finished = finished +slashed
                     if word1[5] == "ّ" or word1[6]=="ّ":
