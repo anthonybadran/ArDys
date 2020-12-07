@@ -215,14 +215,13 @@ def wrongvalue(slashed,word1):
     nonpunct = 0
     xwj = 0
     for i in slashed:
-        if i == "/" or i == "|" or i == "^" or i == "`" or i =="«" or i =="»":
+        if i == "/" or i == "|" or i == "^" or i == "`":
             count += 1
     for t in word1:
-        if t == "،" or t == ":" or t == "." or t == "!" or t ==  "؟"  or t =="«" or t =="»":
+        if t == "،" or t == ":" or t == "." or t == "!" or t ==  "؟":
             nonpunct +=1
         if t =="‍":
             xwj +=1
-    slashed = slashed.strip("»")
     if len(slashed)-count == len(word1)-nonpunct-xwj:
         if nonpunct == 0:
             return slashed
