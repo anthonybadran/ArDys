@@ -179,7 +179,7 @@ def divide_words(word1):
                                 return word1
                             else:
                                 if word1[len(word1) - 1] == "ى" and word1[a+1]=="ى":
-                                    slashed = word1[a] + '/' + word1[a + 1]
+                                    slashed = word1[a]  + word1[a + 1]
                                     finished = finished + slashed
                                 else:
                                     slashed = (word1[a] + word1[a + 1]+"/")
@@ -214,7 +214,7 @@ def divide_words(word1):
                                         finished = finished + slashed
                                 except:
                                     if word1[a + 1] == "َ" and word1[len(word1) - 1] == "ى":
-                                        slashed = word1[a] + word1[a + 1] + '/' + word1[a + 2]
+                                        slashed = word1[a] + word1[a + 1]  + word1[a + 2]
                                         finished = finished + slashed
                                     else:
                                         slashed = (word1[a]+word1[a+1]+'/')
@@ -262,8 +262,6 @@ def divide_words(word1):
                             len(word1) - q] != "ى" and word1[len(word1) - q] != "ٌ" and word1[len(word1) - q] != "ٍ":
                             finished = finished.strip('/') +word1[len(word1)-q]
                     except:pass
-            if word1[len(word1) - 1] == "ى":
-                finished = finished.strip("ى") + '^' + word1[len(word1) - 1]
             return finished.strip("/")
         except:
             return word1
